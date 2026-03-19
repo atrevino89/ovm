@@ -4,7 +4,6 @@ import http_shared "../../http_shared"
 import "base:runtime"
 import "core:c"
 import "core:fmt"
-import "core:os"
 import curl "vendor:curl"
 
 // NOTE: this file is shamelessly extracted from AI assistant.
