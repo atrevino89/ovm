@@ -1,6 +1,6 @@
-package main
+package platform
 
-import http_shared "./http/http_shared"
+import http_shared "../http/http_shared"
 import "core:encoding/json"
 import "core:fmt"
 import "core:strings"

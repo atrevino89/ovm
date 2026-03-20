@@ -1,5 +1,6 @@
 package main
 
+import "commands"
 import "core:fmt"
 import "core:os"
 
@@ -13,8 +14,10 @@ main :: proc() {
 	cmd := os.args[1]
 	args := os.args[2:]
 	switch cmd {
+	case "install":
+
 	case "ls":
-		list(args)
+		commands.list(args)
 	}
 
 	// download_version("")

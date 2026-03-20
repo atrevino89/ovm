@@ -1,10 +1,11 @@
-package main
+package github
 
-import http_shared "./http/http_shared"
+import "../http"
+import http_shared "../http/http_shared"
+import platform "../platform"
 import "core:encoding/json"
 import "core:fmt"
 import "core:strings"
-import "http"
 
 RELEASES_LINK :: "https://api.github.com/repos/odin-lang/Odin/releases?per_page=50&page=1"
 
@@ -45,15 +46,15 @@ download_version :: proc(release: string) {
 	// TODO: handle errors properly
 	resp := fetch_releases(&releases)
 	defer delete(releases)
-	platform := get_platform()
-	download_url, ok := get_download_link(releases[0], platform)
+	arch := platform.get_platform()
+	download_url, ok := get_download_link(releases[0], arch)
 
 	if !ok {
 		fmt.println("URL not found")
 		return
 	}
 
-	filename := get_filename(download_url)
+	filename := platform.get_filename(download_url)
 	fmt.println("status:", resp.status_code)
 
 
