@@ -1,9 +1,6 @@
 package platform
 
-import http_shared "../http/http_shared"
-import "core:encoding/json"
 import "core:fmt"
-import "core:strings"
 
 get_platform :: proc() -> string {
 	os_name: string
@@ -32,25 +29,5 @@ get_platform :: proc() -> string {
 
 	return fmt.tprintf("%s-%s", os_name, arch_name)
 
-}
-
-get_filename :: proc(url: string) -> string {
-	if len(url) == 0 do return ""
-
-	i := strings.last_index(url, "/")
-	if i == -1 || i == len(url) - 1 do return ""
-
-	return url[i + 1:]
-}
-
-parse_json_response_to_release :: proc(
-	resp: http_shared.Response,
-	releases: ^[]http_shared.GithubRelease,
-) {
-	err := json.unmarshal(resp.body, releases)
-	if err != nil {
-		fmt.println("json error:", err)
-		// return resp
-	}
 }
 

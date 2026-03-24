@@ -1,6 +1,6 @@
 package http_internal
 
-import http_shared "../../http_shared"
+import http_shared "app:http/http_shared"
 import "base:runtime"
 import "core:c"
 import "core:fmt"

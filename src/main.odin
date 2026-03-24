@@ -15,7 +15,7 @@ main :: proc() {
 	args := os.args[2:]
 	switch cmd {
 	case "install":
-
+		commands.install(args)
 	case "ls":
 		commands.list(args)
 	}

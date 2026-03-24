@@ -1,8 +1,8 @@
 package github
 
-import "../http"
-import http_shared "../http/http_shared"
-import platform "../platform"
+import "app:http"
+import http_shared "app:http/http_shared"
+import platform "app:platform"
 import "core:encoding/json"
 import "core:fmt"
 import "core:strings"
@@ -54,7 +54,7 @@ download_version :: proc(release: string) {
 		return
 	}
 
-	filename := platform.get_filename(download_url)
+	filename := get_filename(download_url)
 	fmt.println("status:", resp.status_code)
 
 
