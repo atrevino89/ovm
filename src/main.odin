@@ -23,3 +23,13 @@ main :: proc() {
 	// download_version("")
 }
 
+
+/**
+* TASKS:
+* 1. create a local dir in ~/.ovm/ to hold all files or configs
+* 1. add a pre-check where we try to find the ~/.ovm/ dir (for install, ls, etc)
+* 1. need to validate is the right tools are installed like:
+*   - tools to decompress the .tar archive
+    - OS to validate where to put the local ovm directory (for now only Linux / Unix - MacOs)
+**/
+

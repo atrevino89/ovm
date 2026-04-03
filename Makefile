@@ -12,7 +12,7 @@ ls: build
 	./$(BIN) ls
 
 install: build
-	./$(BIN) install
+	./$(BIN) install $(VERSION)
 
 clean:
 	rm -f $(BIN)
